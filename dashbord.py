@@ -707,50 +707,7 @@ def system():
 
     ##################### Menu card ################################
     def menu():
-        roott = Tk()
-        roott.title("Price Menu")
-        roott.geometry("300x300")
-        lblinfo = Label(
-            roott, font=("Calibri", 20, "bold"), text="ITEM LIST", fg="black", bd=10
-        )
-        lblinfo.grid(row=0, column=0)
-        lblprice = Label(
-            roott, font=("Calibri", 20, "bold"), text="Prices", fg="black", bd=10
-        )
-        lblprice.grid(row=0, column=3)
-        lblpizza = Label(
-            roott, font=("Calibri", 20, "bold"), text="Pizza", fg="#2f8be0", bd=10
-        )
-        lblpizza.grid(row=1, column=0)
-        lblpricep = Label(
-            roott, font=("Calibri", 20, "bold"), text="240/-", fg="#2f8be0", bd=10
-        )
-        lblpricep.grid(row=1, column=3)
-        lblburger = Label(
-            roott, font=("Calibri", 20, "bold"), text="Burger", fg="#2f8be0", bd=10
-        )
-        lblburger.grid(row=3, column=0)
-        lblpriceb = Label(
-            roott, font=("Calibri", 20, "bold"), text="125/-", fg="#2f8be0", bd=10
-        )
-        lblpriceb.grid(row=3, column=3)
-        lblicecream = Label(
-            roott, font=("Calibri", 20, "bold"), text="Ice-Cream", fg="#2f8be0", bd=10
-        )
-        lblicecream.grid(row=4, column=0)
-        lblpricei = Label(
-            roott, font=("Calibri", 20, "bold"), text="80/-", fg="#2f8be0", bd=10
-        )
-        lblpricei.grid(row=4, column=3)
-        lbldrinks = Label(
-            roott, font=("Calibri", 20, "bold"), text="Drinks", fg="#2f8be0", bd=10
-        )
-        lbldrinks.grid(row=5, column=0)
-        lblpriced = Label(
-            roott, font=("Calibri", 20, "bold"), text="60/-", fg="#2f8be0", bd=10
-        )
-        lblpriced.grid(row=5, column=3)
-        roott.mainloop()
+        os.system("python menu.py")
 
     # menubutton
     menubtn = Button(
