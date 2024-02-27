@@ -92,7 +92,7 @@ def system():
         root.destroy()
 
     # Topframe
-    topframe = Frame(root, bg="white", width=1600, height=50)
+    topframe = Frame(root, width=1600, height=50)
     topframe.pack(side=TOP)
 
     # Leftframe
@@ -118,7 +118,7 @@ def system():
     style.configure(
         "Treeview", foreground="black", rowheight=40, fieldbackground="white"
     )
-    style.map("Treeview", background=[("selected", "lightblue")])
+    style.map("Treeview", background=[("selected", "lightgreen")])
 
     ###########  Creating table #############
     my_tree = ttk.Treeview(rightframe)
@@ -265,7 +265,7 @@ def system():
         topframe,
         font=("Calibri", 25, "bold"),
         text="Restaurant Management System",
-        fg="Blue",
+        fg="#2f8be0",
         anchor=W,
     )
     main_lbl.grid(row=0, column=0)
@@ -276,7 +276,7 @@ def system():
             15,
         ),
         text=localtime,
-        fg="lightgreen",
+        fg="#014221",
         anchor=W,
     )
     main_lbl.grid(row=1, column=0)
@@ -699,35 +699,35 @@ def system():
         )
         lblprice.grid(row=0, column=3)
         lblpizza = Label(
-            roott, font=("Calibri", 20, "bold"), text="Pizza", fg="Blue", bd=10
+            roott, font=("Calibri", 20, "bold"), text="Pizza", fg="#2f8be0", bd=10
         )
         lblpizza.grid(row=1, column=0)
         lblpricep = Label(
-            roott, font=("Calibri", 20, "bold"), text="240/-", fg="blue", bd=10
+            roott, font=("Calibri", 20, "bold"), text="240/-", fg="#2f8be0", bd=10
         )
         lblpricep.grid(row=1, column=3)
         lblburger = Label(
-            roott, font=("Calibri", 20, "bold"), text="Burger", fg="Blue", bd=10
+            roott, font=("Calibri", 20, "bold"), text="Burger", fg="#2f8be0", bd=10
         )
         lblburger.grid(row=3, column=0)
         lblpriceb = Label(
-            roott, font=("Calibri", 20, "bold"), text="125/-", fg="blue", bd=10
+            roott, font=("Calibri", 20, "bold"), text="125/-", fg="#2f8be0", bd=10
         )
         lblpriceb.grid(row=3, column=3)
         lblicecream = Label(
-            roott, font=("Calibri", 20, "bold"), text="Ice-Cream", fg="Blue", bd=10
+            roott, font=("Calibri", 20, "bold"), text="Ice-Cream", fg="#2f8be0", bd=10
         )
         lblicecream.grid(row=4, column=0)
         lblpricei = Label(
-            roott, font=("Calibri", 20, "bold"), text="80/-", fg="blue", bd=10
+            roott, font=("Calibri", 20, "bold"), text="80/-", fg="#2f8be0", bd=10
         )
         lblpricei.grid(row=4, column=3)
         lbldrinks = Label(
-            roott, font=("Calibri", 20, "bold"), text="Drinks", fg="Blue", bd=10
+            roott, font=("Calibri", 20, "bold"), text="Drinks", fg="#2f8be0", bd=10
         )
         lbldrinks.grid(row=5, column=0)
         lblpriced = Label(
-            roott, font=("Calibri", 20, "bold"), text="60/-", fg="blue", bd=10
+            roott, font=("Calibri", 20, "bold"), text="60/-", fg="#2f8be0", bd=10
         )
         lblpriced.grid(row=5, column=3)
         roott.mainloop()
