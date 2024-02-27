@@ -10,7 +10,7 @@ win3.resizable(0, 0)
 win3.title("Password Reset")
 
 # BACKGROUND IMAGE
-img = Image.open("C:\\Users\\Acer\\Desktop\\first_sem\\first_sem\\background1.jpg")
+img = Image.open("background1.jpg")
 bg = ImageTk.PhotoImage(img)
 
 photoLabel = Label(win3, image=bg)
@@ -51,7 +51,7 @@ def showPassword2():
 # back to login page
 def backLogin():
     win3.destroy()
-    os.system("python C:\\Users\\Acer\\Desktop\\first_sem\\first_sem\\login.py")
+    os.system("python login.py")
 
 
 # password reset function

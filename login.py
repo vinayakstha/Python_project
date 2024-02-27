@@ -10,7 +10,7 @@ win.resizable(0, 0)
 win.title("Log In")
 
 # BACKGROUND IMAGE
-img = Image.open("C:\\Users\\Acer\\Desktop\\first_sem\\first_sem\\background1.jpg")
+img = Image.open("background1.jpg")
 bg = ImageTk.PhotoImage(img)
 
 photoLabel = Label(win, image=bg)
@@ -43,15 +43,13 @@ def showPassword():
 # signup page
 def sighupPage():
     win.destroy()
-    os.system("python C:\\Users\\Acer\\Desktop\\first_sem\\first_sem\\signup.py")
+    os.system("python signup.py")
 
 
 # forgotpassword page
 def forgotPasswordPage():
     win.destroy()
-    os.system(
-        "python C:\\Users\\Acer\\Desktop\\first_sem\\first_sem\\forgotpassword.py"
-    )
+    os.system("python forgotpassword.py")
 
 
 # login function

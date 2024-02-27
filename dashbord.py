@@ -39,10 +39,14 @@ def system():
     def tottal():
         # fetching the values from entry box
         order = orderno.get()
-        pi = float(pizza.get())
-        bu = float(burger.get())
-        ice = float(icecream.get())
-        dr = float(drinks.get())
+        # pi = float(pizza.get())
+        # bu = float(burger.get())
+        # ice = float(icecream.get())
+        # dr = float(drinks.get())
+        pi = round(float(pizza.get()), 2)
+        bu = round(float(burger.get()), 2)
+        ice = round(float(icecream.get()), 2)
+        dr = round(float(drinks.get()), 2)
 
         # computing the cost of items
 
@@ -59,6 +63,9 @@ def system():
         paidtax = str(ptax)
         Service = str(ser)
         overall = str(ptax + ser + sub)
+        # paidtax = "{:.2f}".format(ptax)
+        # service = "{:.2f}".format(ser)
+        # overall = "{:.2f}".format(ptax + ser + sub)
 
         # Displaying the values
         cost.set(costofmeal)

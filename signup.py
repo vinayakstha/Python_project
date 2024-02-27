@@ -10,7 +10,7 @@ win2.resizable(0, 0)
 win2.title("Sign Up")
 
 # BACKGROUND IMAGE
-img = Image.open("C:\\Users\\Acer\\Desktop\\first_sem\\first_sem\\background1.jpg")
+img = Image.open("background1.jpg")
 bg = ImageTk.PhotoImage(img)
 
 photoLabel = Label(win2, image=bg)
@@ -51,7 +51,7 @@ def showPassword2():
 # back to login page
 def backLoginPage():
     win2.destroy()
-    os.system("python C:\\Users\\Acer\\Desktop\\first_sem\\first_sem\\login.py")
+    os.system("python login.py")
 
 
 # sign up function
