@@ -11,9 +11,17 @@ from tkinter import *
 
 # It is definition of System
 def system():
+    from PIL import Image, ImageTk
+
     root = Tk()
     root.geometry("1700x800")
     root.title("Restaurant Management System")
+
+    img = Image.open("logoimage3.png")
+    bg = ImageTk.PhotoImage(img)
+
+    photoLabel = Label(root, image=bg)
+    photoLabel.place(x=10, y=7)
 
     def Database():
         global connectn, cursor
@@ -482,7 +490,7 @@ def system():
         width=12,
         command=exit,
         borderwidth=1,
-    ).grid(row=6, column=2)
+    ).grid(row=8, column=2)
 
     addbtn = Button(
         leftframe,
@@ -492,7 +500,7 @@ def system():
         fg="white",
         bd=3,
         padx=5,
-        pady=5,
+        pady=6,
         width=6,
         borderwidth=1,
         command=add,
@@ -690,12 +698,12 @@ def system():
         fg="white",
         bg="#2f8be0",
         bd=3,
-        padx=10,
-        pady=10,
-        width=10,
+        padx=5,
+        pady=5,
+        width=12,
         borderwidth=1,
         command=feedbackk,
-    ).grid(row=8, column=2, columnspan=1)
+    ).grid(row=6, column=2)
 
     ##################### Menu card ################################
     def menu():
