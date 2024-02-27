@@ -5,6 +5,7 @@ import time
 from tkinter import ttk
 from tkinter import messagebox
 import sqlite3
+import os
 from tkinter import *
 
 
@@ -90,6 +91,7 @@ def system():
     # defining exit function
     def exit():
         root.destroy()
+        os.system("python login.py")
 
     # Topframe
     topframe = Frame(root, width=1600, height=50)
@@ -461,7 +463,7 @@ def system():
     exitbtn = Button(
         leftframe,
         font=("Calibri", 16, "bold"),
-        text="Exit The System",
+        text="Logout",
         bg="#2f8be0",
         fg="white",
         bd=3,
