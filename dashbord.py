@@ -94,15 +94,25 @@ def system():
         os.system("python login.py")
 
     # Topframe
-    topframe = Frame(root, width=1600, height=50)
+    topframe = Frame(
+        root, width=1600, height=50, highlightbackground="#2f8be0", highlightthickness=4
+    )
     topframe.pack(side=TOP)
 
     # Leftframe
-    leftframe = Frame(root, width=900, height=700)
+    leftframe = Frame(
+        root,
+        width=920,
+        height=1000,
+        highlightbackground="#5f5f5f",
+        highlightthickness=4,
+    )
     leftframe.pack(side=LEFT)
 
     # rightframe
-    rightframe = Frame(root, width=400, height=700)
+    rightframe = Frame(
+        root, width=400, height=700, highlightbackground="#5f5f5f", highlightthickness=4
+    )
     rightframe.pack(side=RIGHT)
 
     ################## display data ####################
