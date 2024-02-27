@@ -76,21 +76,12 @@ def resetPassword():
                 confirmPasswordEntry.delete(0, END)
             else:
                 messagebox.showerror(title="error", message="invalid credentials")
-                # emailEntry.delete(0, END)
-                # newPasswordEntry.delete(0, END)
-                # confirmPasswordEntry.delete(0, END)
         else:
             messagebox.showerror(title="error", message="Passwords do not match")
-            # emailEntry.delete(0, END)
-            # newPasswordEntry.delete(0, END)
-            # confirmPasswordEntry.delete(0, END)
         conn.commit()
         conn.close()
     else:
         messagebox.showerror(title="error", message="invalid credentials")
-        # emailEntry.delete(0, END)
-        # newPasswordEntry.delete(0, END)
-        # confirmPasswordEntry.delete(0, END)
 
 
 # LABEL

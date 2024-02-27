@@ -80,9 +80,7 @@ def signUpFunction():
             cursor.execute(emailSelect, [(email)])
             if cursor.fetchall():
                 messagebox.showerror(title="Error", message="Account already exists")
-                # emailEntry.delete(0, END)
-                # createPasswordEntry.delete(0, END)
-                # confirmPasswordEntry.delete(0, END)
+
             else:
                 cursor.execute(dataInsertQuery, dataInsertTuple)
                 messagebox.showinfo(
@@ -97,9 +95,6 @@ def signUpFunction():
             )
     else:
         messagebox.showerror(title="Error", message="Please fill all informations")
-        # emailEntry.delete(0, END)
-        # createPasswordEntry.delete(0, END)
-        # confirmPasswordEntry.delete(0, END)
     conn.commit()
 
     conn.close()

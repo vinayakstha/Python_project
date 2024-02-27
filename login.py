@@ -65,11 +65,9 @@ def login():
         findUser = """SELECT * FROM login_data WHERE email=? and password = ?"""
         cursor.execute(findUser, [(email), (password)])
         if cursor.fetchall():
-            # messagebox.showinfo(title="Info", message="Successfully logged in")
             win.destroy()
             os.system("python dashbord.py")
-            # emailEntry.delete(0, END)
-            # passwordEntry.delete(0, END)
+
         else:
             messagebox.showerror(title="error", message="Invalid credentials")
     else:
