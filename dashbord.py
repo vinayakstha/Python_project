@@ -522,188 +522,188 @@ def system():
 
     ########################### feedback form ################################
 
-    def feedbackk():
-        feed = Tk()
-        feed.geometry("600x500")
-        feed.title("Submit Feedback form")
-        # database #
-        connectn = sqlite3.connect("Restaurant.db")
-        cursor = connectn.cursor()
-        cursor.execute(
-            "CREATE TABLE IF NOT EXISTS FEEDBACK(n text,eid text,feedback5 text,com text)"
-        )
-        # variable datatype asssignment #
-        name = StringVar()
-        email = StringVar()
-        comments = StringVar()
+    # def feedbackk():
+    #     feed = Tk()
+    #     feed.geometry("600x500")
+    #     feed.title("Submit Feedback form")
+    #     # database #
+    #     connectn = sqlite3.connect("Restaurant.db")
+    #     cursor = connectn.cursor()
+    #     cursor.execute(
+    #         "CREATE TABLE IF NOT EXISTS FEEDBACK(n text,eid text,feedback5 text,com text)"
+    #     )
+    #     # variable datatype asssignment #
+    #     name = StringVar()
+    #     email = StringVar()
+    #     comments = StringVar()
 
-        # defiing submit function
-        def submit():
-            n = name.get()
-            eid = email.get()
-            com = txt.get("1.0", END)
-            feedback1 = ""
-            feedback2 = ""
-            feedback3 = ""
-            feedback4 = ""
-            if checkvar1.get() == "1":
-                feedback1 = "Excellent"
-            if checkvar2.get() == "1":
-                feedback2 = "Good"
-            if checkvar3.get() == "1":
-                feedback2 = "Average"
-            if checkvar4.get() == "1":
-                feedback2 = "Poor"
-            feedback5 = feedback1 + " " + feedback2 + " " + feedback3 + " " + feedback4
-            conn = sqlite3.connect("Restaurant.db")
-            cursor = conn.cursor()
-            cursor.execute(
-                "INSERT INTO FEEDBACK VALUES ('"
-                + n
-                + "','"
-                + eid
-                + "','"
-                + com
-                + "','"
-                + feedback5
-                + "')"
-            )
-            messagebox.showinfo("message", "data inserted !")
-            feed.destroy()
+    #     # defiing submit function
+    #     def submit():
+    #         n = name.get()
+    #         eid = email.get()
+    #         com = txt.get("1.0", END)
+    #         feedback1 = ""
+    #         feedback2 = ""
+    #         feedback3 = ""
+    #         feedback4 = ""
+    #         if checkvar1.get() == "1":
+    #             feedback1 = "Excellent"
+    #         if checkvar2.get() == "1":
+    #             feedback2 = "Good"
+    #         if checkvar3.get() == "1":
+    #             feedback2 = "Average"
+    #         if checkvar4.get() == "1":
+    #             feedback2 = "Poor"
+    #         feedback5 = feedback1 + " " + feedback2 + " " + feedback3 + " " + feedback4
+    #         conn = sqlite3.connect("Restaurant.db")
+    #         cursor = conn.cursor()
+    #         cursor.execute(
+    #             "INSERT INTO FEEDBACK VALUES ('"
+    #             + n
+    #             + "','"
+    #             + eid
+    #             + "','"
+    #             + com
+    #             + "','"
+    #             + feedback5
+    #             + "')"
+    #         )
+    #         messagebox.showinfo("message", "data inserted !")
+    #         feed.destroy()
 
         # defining cancel button
-        def cancel():
-            feed.destroy()
+    # def cancel():
+    #         feed.destroy()
 
-        # label#
-        lb1 = Label(
-            feed,
-            font=("Calisto MT", 15, "bold"),
-            text="Thanks for Visiting!",
-            fg="black",
-        ).pack(side=TOP)
-        lbl2 = Label(
-            feed,
-            font=("calisto MT", 15),
-            text="We're glad you chose us ! Please tell us how it was!",
-            fg="black",
-        ).pack(side=TOP)
-        # name
-        namelbl = Label(
-            feed, font=("vardana", 15), text="Name:-", fg="black", bd=10, anchor=W
-        ).place(x=10, y=150)
-        nametxt = Entry(
-            feed,
-            font=("vardana", 15),
-            bd=6,
-            insertwidth=2,
-            bg="white",
-            justify="right",
-            textvariable=name,
-        ).place(x=15, y=185)
-        # email
-        emaillbl = Label(
-            feed, font=("vardana", 15), text="Email:-", fg="black", bd=10, anchor=W
-        ).place(x=280, y=150)
-        emailtxt = Entry(
-            feed,
-            font=("vardana", 15),
-            bd=6,
-            insertwidth=2,
-            bg="white",
-            justify="right",
-            textvariable=email,
-        ).place(x=285, y=185)
-        ###checkbutton
-        ratelbl = Label(
-            feed,
-            font=("vardana", 15),
-            text="How would you rate us?",
-            fg="black",
-            bd=10,
-            anchor=W,
-        ).place(x=10, y=215)
-        checkvar1 = StringVar()
-        checkvar2 = StringVar()
-        checkvar3 = StringVar()
-        checkvar4 = StringVar()
-        c1 = Checkbutton(
-            feed,
-            font=("Calibri", 10, "bold"),
-            text="Excellent",
-            bg="white",
-            variable=checkvar1,
-        )
-        c1.deselect()
-        c1.place(x=15, y=265)
-        c2 = Checkbutton(
-            feed,
-            font=("Calibri", 10, "bold"),
-            text="Good",
-            bg="white",
-            variable=checkvar2,
-        )
-        c2.deselect()
-        c2.place(x=120, y=265)
-        c3 = Checkbutton(
-            feed,
-            font=("Calibri", 10, "bold"),
-            text=" Average",
-            bg="white",
-            variable=checkvar3,
-        )
-        c3.deselect()
-        c3.place(x=220, y=265)
-        c4 = Checkbutton(
-            feed,
-            font=("Calibri", 10, "bold"),
-            text="   Poor  ",
-            bg="white",
-            variable=checkvar4,
-        )
-        c4.deselect()
-        c4.place(x=320, y=265)
-        # comments"
-        commentslbl = Label(
-            feed, font=("Calibri", 15), text="Comments", fg="black", bd=10, anchor=W
-        ).place(x=10, y=300)
-        txt = Text(feed, width=50, height=5)
-        txt.place(x=15, y=335)
-        # button
-        submit = Button(
-            feed,
-            font=("Calibri", 15),
-            text="Submit",
-            fg="white",
-            bg="green",
-            bd=2,
-            command=submit,
-        ).place(x=145, y=430)
-        cancel = Button(
-            feed,
-            font=("Calibri", 15),
-            text="Cancel",
-            fg="white",
-            bg="red",
-            bd=2,
-            command=cancel,
-        ).place(x=245, y=430)
-        feed.mainloop()
+    #     # label#
+    # lb1 = Label(
+    #         feed,
+    #         font=("Calisto MT", 15, "bold"),
+    #         text="Thanks for Visiting!",
+    #         fg="black",
+    #     ).pack(side=TOP)
+    # lbl2 = Label(
+    #         feed,
+    #         font=("calisto MT", 15),
+    #         text="We're glad you chose us ! Please tell us how it was!",
+    #         fg="black",
+    #     ).pack(side=TOP)
+    #     # name
+    # namelbl = Label(
+    #         feed, font=("vardana", 15), text="Name:-", fg="black", bd=10, anchor=W
+    #     ).place(x=10, y=150)
+    # nametxt = Entry(
+    #         feed,
+    #         font=("vardana", 15),
+    #         bd=6,
+    #         insertwidth=2,
+    #         bg="white",
+    #         justify="right",
+    #         textvariable=name,
+    #     ).place(x=15, y=185)
+    #     # email
+    # emaillbl = Label(
+    #         feed, font=("vardana", 15), text="Email:-", fg="black", bd=10, anchor=W
+    #     ).place(x=280, y=150)
+    # emailtxt = Entry(
+    #     feed,
+    #         font=("vardana", 15),
+    #         bd=6,
+    #         insertwidth=2,
+    #         bg="white",
+    #         justify="right",
+    #         textvariable=email,
+    #     ).place(x=285, y=185)
+    #     ###checkbutton
+    # ratelbl = Label(
+    #         feed,
+    #         font=("vardana", 15),
+    #         text="How would you rate us?",
+    #         fg="black",
+    #         bd=10,
+    #         anchor=W,
+    #     ).place(x=10, y=215)
+    # checkvar1 = StringVar()
+    # checkvar2 = StringVar()
+    # checkvar3 = StringVar()
+    # checkvar4 = StringVar()
+    # c1 = Checkbutton(
+    #         feed,
+    #         font=("Calibri", 10, "bold"),
+    #         text="Excellent",
+    #         bg="white",
+    #         variable=checkvar1,
+    #     )
+    # c1.deselect()
+    # c1.place(x=15, y=265)
+    # c2 = Checkbutton(
+    #         feed,
+    #         font=("Calibri", 10, "bold"),
+    #         text="Good",
+    #         bg="white",
+    #         variable=checkvar2,
+    #     )
+    # c2.deselect()
+    # c2.place(x=120, y=265)
+    # c3 = Checkbutton(
+    #         feed,
+    #         font=("Calibri", 10, "bold"),
+    #         text=" Average",
+    #         bg="white",
+    #         variable=checkvar3,
+    #     )
+    # c3.deselect()
+    # c3.place(x=220, y=265)
+    # c4 = Checkbutton(
+    #         feed,
+    #         font=("Calibri", 10, "bold"),
+    #         text="   Poor  ",
+    #         bg="white",
+    #         variable=checkvar4,
+    #     )
+    # c4.deselect()
+    # c4.place(x=320, y=265)
+    #     # comments"
+    # commentslbl = Label(
+    #         feed, font=("Calibri", 15), text="Comments", fg="black", bd=10, anchor=W
+    #     ).place(x=10, y=300)
+    # txt = Text(feed, width=50, height=5)
+    # txt.place(x=15, y=335)
+    #     # button
+    # submit = Button(
+    #         feed,
+    #         font=("Calibri", 15),
+    #         text="Submit",
+    #         fg="white",
+    #         bg="green",
+    #         bd=2,
+    #         command=submit,
+    #     ).place(x=145, y=430)
+    # cancel = Button(
+    #         feed,
+    #         font=("Calibri", 15),
+    #         text="Cancel",
+    #         fg="white",
+    #         bg="red",
+    #         bd=2,
+    #         command=cancel,
+    #     ).place(x=245, y=430)
+    # feed.mainloop()
 
     # Feedbackbutton
-    feedbtn = Button(
-        leftframe,
-        font=("Calibri", 16, "bold"),
-        text="Feedback Form",
-        fg="white",
-        bg="#2f8be0",
-        bd=3,
-        padx=5,
-        pady=5,
-        width=12,
-        borderwidth=1,
-        command=feedbackk,
-    ).grid(row=6, column=2)
+    # feedbtn = Button(
+    #     leftframe,
+    #     font=("Calibri", 16, "bold"),
+    #     text="Feedback Form",
+    #     fg="white",
+    #     bg="#2f8be0",
+    #     bd=3,
+    #     padx=5,
+    #     pady=5,
+    #     width=12,
+    #     borderwidth=1,
+    #     command=feedbackk,
+    # ).grid(row=6, column=2)
 
     ##################### Menu card ################################
     def menu():
