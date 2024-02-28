@@ -284,7 +284,7 @@ def system():
     main_lbl = Label(
         topframe,
         font=("Calibri", 25, "bold"),
-        text="Restaurant Management System",
+        text="Mitho Mitho Mitho",
         fg="#2f8be0",
         anchor=W,
     )
