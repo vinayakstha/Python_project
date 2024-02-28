@@ -462,7 +462,8 @@ def system():
         width=6,
         borderwidth=1,
         command=tottal,
-    ).grid(row=6, column=3)
+    )
+    totbtn.place(x=410, y=225)
 
     resetbtn = Button(
         leftframe,
@@ -490,7 +491,8 @@ def system():
         width=12,
         command=exit,
         borderwidth=1,
-    ).grid(row=8, column=2)
+    )
+    exitbtn.place(x=375, y=315)
 
     addbtn = Button(
         leftframe,
